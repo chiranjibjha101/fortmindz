@@ -6,4 +6,8 @@ db.connect = async function () {
   console.log("Connected to database");
 };
 db.User = require("./User")(mongoose);
+db.Appointment = require("./Appointment")(mongoose);
+db.Salon = require("./Salon")(mongoose);
+db.Service = require("./Service")(mongoose);
+db.Beautician = require("./Beautician")(mongoose);
 module.exports = db;

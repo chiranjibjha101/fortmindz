@@ -1,5 +1,5 @@
 module.exports = function (mongoose) {
-  const serviceSchema = new Schema({
+  const serviceSchema = mongoose.Schema({
     name: {
       type: String,
       required: true,
@@ -17,7 +17,7 @@ module.exports = function (mongoose) {
       required: true,
     },
     salon: {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Salon",
     },
   });

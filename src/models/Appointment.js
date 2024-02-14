@@ -1,22 +1,22 @@
 module.exports = function (mongoose) {
-  const appointmentSchema = new Schema({
+  const appointmentSchema = mongoose.Schema({
     service: {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Service",
       required: true,
     },
     beautician: {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Beautician",
       required: true,
     },
     salon: {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Salon",
       required: true,
     },
     user: {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },

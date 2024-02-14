@@ -63,7 +63,6 @@ Auth.register = async function register(req, res, next) {
       token: signedToken,
     });
   } catch (error) {
-    const validationError = fromZodError(error);
     next(error);
   }
 };
@@ -94,7 +93,9 @@ Auth.login = async function (req, res, next) {
         token: signedToken,
       });
     } else {
-      res.status(401).json({ status: false, message: "Credentials are wrong" });
+      res
+        .status(401)
+        .json({ status: false, message: newUser.error.wrongCredentials });
     }
   } catch (error) {
     next(error);
