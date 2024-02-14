@@ -46,6 +46,9 @@ module.exports = {
       create: "Failed to create appointment",
       slotAlreadyBooked: "Appointment slot is already booked",
       fetchByService: "Failed to fetch appointments based on service",
+      salon: "Salon Does not exist",
+      beautician: "Beautician Does not exist",
+      service: "Service Does not exist",
     },
   },
   salons: {
