@@ -1,14 +1,12 @@
 const { Salon } = require("../models/db");
 const { salons } = require("../utils/responseMessage");
 const { code } = require("../utils/httpcode");
-const sortSalonsByRatings = async (req, res) => {
+const SalonsByRatings = async (req, res) => {
   try {
-    const { sortBy, order, beauticianId } = req.query;
+    const { rating, beauticianId } = req.query;
 
-    salonsQueary = { beautician: beauticianId };
-    const sortQuery = {};
-    sortQuery[sortBy] = order === "asc" ? 1 : -1;
-    const salonsData = await Salon.find(salonsQueary).sort(sortQuery);
+    salonsQueary = { beautician: beauticianId, ratings: rating };
+    const salonsData = await Salon.find(salonsQueary);
     res.status(code.ok).json({
       status: true,
       message: salons.success.sortByRatings,
@@ -23,5 +21,5 @@ const sortSalonsByRatings = async (req, res) => {
 };
 
 module.exports = {
-  sortSalonsByRatings,
+  SalonsByRatings,
 };

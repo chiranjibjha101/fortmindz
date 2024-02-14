@@ -16,7 +16,7 @@ const {
 
 const { getAllBeauticians } = require("../controllers/BeauticiansController");
 
-const { sortSalonsByRatings } = require("../controllers/SalonController");
+const { SalonsByRatings } = require("../controllers/SalonController");
 //////routes
 /////
 ////
@@ -44,9 +44,9 @@ router.get(
   sortServicesByPrice
 );
 router.get(
-  "/salons/sortByRatings",
+  "/salons/byRatings",
   passport.authenticate("jwt", { session: false }),
-  sortSalonsByRatings
+  SalonsByRatings
 );
 
 router.get(
